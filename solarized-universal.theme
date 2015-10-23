@@ -288,7 +288,7 @@ abstracts = {
   #   the content parts of the adv_windowlist.  Default seems to be blue
   # NOTE: if not set, the default background seems to be %w%4 = white on blue
   # %4 = blue
-  sb_background = "%k%6";
+  sb_background = "%w%4";
 
   # default backround for "default" statusbar group
   # NOTE: this impacts the statusbar of an inactive window and the edges of adv_windowlist
@@ -296,12 +296,12 @@ abstracts = {
   sb_default_bg = "%k%7";
 
   # background for topicbar at the top (defaults to sb_default_bg)
-  sb_topic_bg = "%W%0";
+  sb_topic_bg = "%B%0";
 
   # background for the statusbar of active window. You can also give
   # the foreground color.
   # %2 = green
-  sb_window_bg = "%k%2";
+  sb_window_bg = "%B%0";
 
   # background for prompt / input line
   sb_prompt_bg = "%n";
@@ -320,13 +320,15 @@ abstracts = {
   topicsbstart = "{sbstart $*}";
   topicsbend = "{sbend $*}";
 
-  prompt = "$c$*%n> ";
+  prompt = "%0 $c$* %n%k⮀%n ";
 
   # This controls each part of a statusbor, including the outer brackets of adv_windowlist
-  sb = " $* %M|%n";
+  #sb = " $*%B⮁%n";
+  sb = " $* ";
   # The mode is next to your NICK and the channel
   # %Y = brightyellow (Solarized: base00, i.e. 2nd darkest gray)
-  sbmode = "%b(%n+$*%b)%n";
+  #sbmode = " %b(%n+$*%b)%n";
+  sbmode = "%w %c+$*%w %n";
   sbaway = " (%GzZzZ%n)";
   # %Y = brightyellow (Solarized: base00, i.e. 2nd darkest gray)
   sbservertag = ":$0 %b(change with ^X)%n";
@@ -336,12 +338,13 @@ abstracts = {
 
   # ',' separator between the window numbers
   # %g = green (same color as the active statusbar so we dont' see it)
-  sb_act_sep = "%g$*";
+  #sb_act_sep = "%b$*";
+  sb_act_sep = "%Y+";
   # normal text
   # This also affects the color of the window with activity in adv_windowlist
-  sb_act_text = "%w$*";
+  sb_act_text = "%R$*";
   # public message (ordinary messages)
-  sb_act_msg = "%R$*";
+  sb_act_msg = "%c$*";
   # hilight (when people actually chat)
   # This also affects the color of the window with direct message in adv_windowlist
   sb_act_hilight = "%m$*";
@@ -362,11 +365,20 @@ abstracts = {
   ### For adv_windowlist.pl script
 
   # Mentioned in adv_windowlist but not default_theme
-  #sb_act_none = "%0%W";
+  sb_act_none = "$*";
 };
 
 formats = {
   "fe-common/core" = {
     daychange = "           %g-----%w-%W-%n Day changed to %%D %W-%w-%g-----%n";
+  };
+  "Irssi::Script::adv_windowlist" = {
+    awl_display_key           = "%B$N $H$C$S%n";
+    awl_display_key_active    = "%4%w$N $H$C$S%n%b%n";
+    awl_display_key_visible   = "%3%w$N $H$C$S%n%y%n";
+    awl_display_nokey         = "  %0$N  %U$C%U  %n";
+    awl_display_nokey_active  = "%k%4 %w$N %k %U$C%U %8%8%n";
+    awl_display_nokey_visible = "%k%3 %w$N %k %U$C%U %8%8%n";
+    awl_display_header = "";
   };
 };
