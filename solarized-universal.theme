@@ -370,14 +370,14 @@ abstracts = {
 
 formats = {
   "fe-common/core" = {
-    daychange = "           %g-----%w-%W-%n Day changed to %%D %W-%w-%g-----%n";
+    daychange = "           %g~~~~~~~%n Day changed to %%D %g~~~~~~~%n";
   };
   "Irssi::Script::adv_windowlist" = {
-    awl_display_key           = "%0%B$N $H$C$S%n";
-    awl_display_key_active    = "%4%w$N $H$C$S%n%b%0%n";
-    awl_display_key_visible   = "%3%w$N $H$C$S%n%y%n";
-    awl_display_nokey         = "  %0$N  %U$C%U  %n";
-    awl_display_nokey_active  = "%k%4 %w$N %k %U$C%U %8%8%n";
+    awl_display_key = "%0%B$N $H$C$S%n";
+    awl_display_key_active = "%4%w$N $H$C$S%n%b%0%n";
+    awl_display_key_visible = "%3%w$N $H$C$S%n%y%0%n";
+    awl_display_nokey = "  %0$N  %U$C%U  %n";
+    awl_display_nokey_active = "%k%4 %w$N %k %U$C%U %8%8%n";
     awl_display_nokey_visible = "%k%3 %w$N %k %U$C%U %8%8%n";
     awl_display_header = "";
   };
