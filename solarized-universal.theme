@@ -320,7 +320,7 @@ abstracts = {
   topicsbstart = "{sbstart $*}";
   topicsbend = "{sbend $*}";
 
-  prompt = "%0 $c$* %n%k⮀%n ";
+  prompt = "%0 $c$* %n%k%n ";
 
   # This controls each part of a statusbor, including the outer brackets of adv_windowlist
   #sb = " $*%B⮁%n";
